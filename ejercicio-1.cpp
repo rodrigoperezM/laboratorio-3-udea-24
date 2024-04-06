@@ -1,39 +1,10 @@
 #include <iostream>
-#include <stdlib.h>
 #include <string>
+#include "cuenta-corriente.h" // Incluye el archivo de encabezado de la clase C_c
 
 using namespace std;
 
-class C_c {
-	private://Atributos
-		string nombre;
-		string apellido;
-		string direccion;
-		string tel;
-		double sal;
-		
-		public://Metodos
-		C_c (string,string,string,string, double); //constructor
-		void saldo();
-		void retirar();
-		void ingresar();
-		void consultar();
-		void sin_saldo();
-		
-		// Métodos set y get
-		void setNombre(string nom) { nombre = nom; }
-		string getNombre() const { return nombre; }
-		
-		void setApellido(string ape) { apellido = ape; }
-		string getApellido() const { return apellido; }
-		
-		void setDireccion(string dir) { direccion = dir; }
-		string getDireccion() const { return direccion; }
-		
-		void setTelefono(string tele) { tel = tele; }
-		string getTelefono() const { return tel; }
-			
-};
+// Implementación de los métodos de la clase C_c
 
 // inicializa los atributos
 C_c::C_c (string nom,string ape,string dir,string tele,double sald){
@@ -80,7 +51,10 @@ void C_c::sin_saldo() {
     }
 }
 
-int main() {
+int main() 
+
+{
+	
 	char op;
 	string nombre, apellido, direccion, telefono;
     double saldo_inicial;
