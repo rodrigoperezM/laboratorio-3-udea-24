@@ -16,15 +16,15 @@ public:
         }
 
         string escrito;
-        cout << "Escriba para guardar en el archivo: ";
+        cout << "Escriba el nombre para guardar en el archivo: ";
         getline(cin, escrito);
 
         while (true) {
             char letra;
-            cout << "Desea escribir algo más s/n? ";
+            cout << "Desea escribir algo mas s/n? ";
             cin >> letra;
             cin.ignore();
-            escritura << escrito << endl; // Guarda el texto antes de obtener la próxima entrada
+            escritura << escrito << endl; // Guarda el texto antes de obtener la prÃ³xima entrada
 
             if (letra == 's') {
                 cout << "Escriba para guardar en el archivo: ";
@@ -36,10 +36,30 @@ public:
         }
         escritura.close();
     }
+    
+    void leer()
+    {
+    	ifstream lectura;
+    	string contenido;
+    	lectura.open("Ejercicio 2 laboratorio 3.txt",ios::in);//abrir archivo para leer
+    	
+    	if (lectura.fail()) {
+            cout << "No se puede abrir el archivo" << endl;
+            exit(1);
+        }
+        
+        while(!lectura.eof())//eof()- funcion que recorre todo el archivo
+        {
+        	getline(lectura,contenido);
+        	cout<<lectura<<endl;
+		}
+		lectura.close();
+	}
 };
 
 int main() {
     Archivos archivos;
     archivos.escribir();
+    archivos.leer();
     return 0;
 }
