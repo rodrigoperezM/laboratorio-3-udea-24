@@ -2,6 +2,7 @@
 #define PELICULA_H
 
 #include <string>
+#include <cstdio> //  para incluir la biblioteca cstdio
 
 class Duracion {
 private:
@@ -13,7 +14,7 @@ public:
     // Constructor
     Duracion(int horas, int minutos, int segundos);
 
-    // Métodos para obtener los atributos
+    // MÃ©todos para obtener los atributos
     int getHoras() const;
     int getMinutos() const;
     int getSegundos() const;
@@ -30,15 +31,16 @@ private:
 public:
     // Constructor
     Pelicula(const std::string& nombre, const std::string& director, int anoLanzamiento, const std::string& genero, const Duracion& duracion);
-
-    // Métodos para obtener los atributos
+ // Constructor por defecto
+    Pelicula();
+    // MÃ©todos para obtener los atributos
     std::string getNombre() const;
     std::string getDirector() const;
     int getLanzamiento() const;
     std::string getGenero() const;
     Duracion getDuracion() const;
 
-    // Métodos para establecer los atributos
+    // MÃ©todos para establecer los atributos
     void setNombre(const std::string& nombre);
     void setDirector(const std::string& director);
     void setLanzamiento(int anoLanzamiento);
@@ -46,7 +48,7 @@ public:
     void setDuracion(const Duracion& duracion);
 };
 
-// Implementación de la clase Duracion
+// ImplementaciÃ³n de la clase Duracion
 Duracion::Duracion(int horas, int minutos, int segundos) : horas(horas), minutos(minutos), segundos(segundos) {}
 
 int Duracion::getHoras() const {
@@ -61,7 +63,8 @@ int Duracion::getSegundos() const {
     return segundos;
 }
 
-// Implementación de la clase Pelicula
+// ImplementaciÃ³n de la clase Pelicula
+Pelicula::Pelicula() : nombre(""), director(""), lanzamiento(0), genero(""), duracion(0, 0, 0) {}
 Pelicula::Pelicula(const std::string& nombre, const std::string& director, int anoLanzamiento, const std::string& genero, const Duracion& duracion)
     : nombre(nombre), director(director), lanzamiento(anoLanzamiento), genero(genero), duracion(duracion) {}
 
@@ -106,4 +109,3 @@ void Pelicula::setDuracion(const Duracion& duracion) {
 }
 
 #endif // PELICULA_H
-
