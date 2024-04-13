@@ -1,5 +1,5 @@
 #include <iostream>
-#include "caracter_y_secuencia.h"
+#include "caracter-y-secuencia.h"
 #include<stdlib.h>
 #include <fstream>
 #include <string>
